@@ -5,6 +5,4 @@ module co.edu.uniquindio.gimnasiouq.gimnasiouq {
 
     opens co.edu.uniquindio.gimnasiouq.gimnasiouq to javafx.fxml;
     exports co.edu.uniquindio.gimnasiouq.gimnasiouq;
-    exports co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller;
-    opens co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller to javafx.fxml;
 }

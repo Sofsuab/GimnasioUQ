@@ -1,4 +1,4 @@
-package co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller;
+package co.edu.uniquindio.gimnasiouq.gimnasiouq.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
