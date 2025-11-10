@@ -39,6 +39,7 @@ public class LoginViewController {
     void initialize() {
         cmbRol.getItems().addAll("Administrador", "Recepcionista");
         cmbRol.setValue("Seleccionar");
+
     }
 
 }
