@@ -1,4 +1,4 @@
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.model;
 
-public class Recepcionista {
+public class Recepcionista extends Empleado{
 }

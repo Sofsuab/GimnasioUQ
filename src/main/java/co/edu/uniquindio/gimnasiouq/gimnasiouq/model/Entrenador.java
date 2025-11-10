@@ -1,4 +1,4 @@
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.model;
 
-public class Entrenador {
+public class Entrenador extends Empleado{
 }

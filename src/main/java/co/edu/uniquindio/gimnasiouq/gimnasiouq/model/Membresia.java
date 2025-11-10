@@ -2,7 +2,7 @@ package co.edu.uniquindio.gimnasiouq.gimnasiouq.model;
 
 import java.time.LocalDate;
 
-public class Membresia {
+public abstract class Membresia implements IMembresia{
     private TipoMembresia tipoMembresia;
     private double costo;
     private LocalDate fechaInicio;

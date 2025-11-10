@@ -7,6 +7,7 @@ public class Clase {
     private LocalDate horarioInicio;
     private LocalDate horarioFin;
     private int cupoMaximo;
+    private TipoClase tipoClase;
 
 
 
