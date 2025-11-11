@@ -1,4 +1,4 @@
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.controller;
 
-public class ReporteMembresiaController {
+public class AdministradorController {
 }

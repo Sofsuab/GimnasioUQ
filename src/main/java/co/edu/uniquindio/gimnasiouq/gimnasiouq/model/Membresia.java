@@ -2,7 +2,7 @@ package co.edu.uniquindio.gimnasiouq.gimnasiouq.model;
 
 import java.time.LocalDate;
 
-public class Membresia {
+public abstract class Membresia implements IMembresia{
     private TipoMembresia tipoMembresia;
     private double costo;
     private LocalDate fechaInicio;
@@ -35,5 +35,16 @@ public class Membresia {
     }
     public boolean isEstado() {
         return estado;
+    }
+
+    public Membresia(TipoMembresia tipoMembresia, double costo, LocalDate fechaInicio, LocalDate fechaFin, boolean estado) {
+        this.tipoMembresia = tipoMembresia;
+        this.costo = costo;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.estado = estado;
+    }
+
+    public Membresia() {
     }
 }

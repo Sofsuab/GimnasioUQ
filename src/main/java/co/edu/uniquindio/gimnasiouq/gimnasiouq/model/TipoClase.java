@@ -1,4 +1,5 @@
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.model;
 
-public class TrabajadorUq {
+public enum TipoClase {
+    YOGA,SPINNING,ZUMBA
 }
