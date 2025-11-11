@@ -9,11 +9,11 @@ public class RecepcionistaViewController {
     private TabPane tabPanePrincipal;
     //Aquí vamos a controlar las subvistas
     @FXML
-    private RegistroUsuariosViewController registroUsuariosController;
+    private RecepcionistaRegistroUsuariosViewController registroUsuariosController;
     @FXML
-    private AsignacionMembresiasViewController asignacionMembresiasController;
+    private RecepcionistaAsignacionMembresiasViewController asignacionMembresiasController;
     @FXML
-    private ReportesViewController reportesController;
+    private RecepcionistaReportesViewController reportesController;
 
 
     @FXML

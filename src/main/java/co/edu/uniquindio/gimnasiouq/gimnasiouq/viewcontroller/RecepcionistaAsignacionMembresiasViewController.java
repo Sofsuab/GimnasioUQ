@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
-public class AsignacionMembresiasViewController {
+public class RecepcionistaAsignacionMembresiasViewController {
 
     @FXML
     private ResourceBundle resources;

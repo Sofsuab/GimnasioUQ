@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller.RegistroUsuariosViewController">
+<AnchorPane prefHeight="600.0" prefWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller.RecepcionistaRegistroUsuariosViewController">
 
     <children>
         <Separator layoutX="9.0" layoutY="42.0" prefHeight="459.0" prefWidth="843.0" />
