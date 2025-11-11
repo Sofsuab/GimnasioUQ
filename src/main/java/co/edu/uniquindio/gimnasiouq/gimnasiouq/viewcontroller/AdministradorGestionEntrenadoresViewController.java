@@ -2,6 +2,8 @@ package co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.TipoClase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,7 +32,7 @@ public class AdministradorGestionEntrenadoresViewController{
     private Button btnRegistrar;
 
     @FXML
-    private ComboBox<String> cmbClases;
+    private ComboBox<TipoClase> cmbClases;
 
     @FXML
     private Label txtApellido;
@@ -75,7 +77,7 @@ public class AdministradorGestionEntrenadoresViewController{
 
     @FXML
     void initialize() {
-
+    cmbClases.getItems().addAll(TipoClase.YOGA,TipoClase.SPINNING,TipoClase.ZUMBA);
 
     }
 

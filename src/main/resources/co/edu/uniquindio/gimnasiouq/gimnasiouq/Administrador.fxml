@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<TabPane fx:id="tabPanePrincipal" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller.AdministradorViewController">
 
-</AnchorPane>
+    <tabs>
+        <Tab text="Gestión de entrenadores">
+            <fx:include source="AdministradorGestionEntrenadores.fxml" />
+        </Tab>
+
+
+        <Tab text="Generación de reportes">
+            <fx:include source="AdministradorGeneradordeRegistroAvanzado.fxml" />
+        </Tab>
+    </tabs>
+
+</TabPane>

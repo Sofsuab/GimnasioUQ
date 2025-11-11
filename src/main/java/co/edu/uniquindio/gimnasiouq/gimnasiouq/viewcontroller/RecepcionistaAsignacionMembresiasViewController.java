@@ -2,6 +2,8 @@ package co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.TipoMembresia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,7 +28,7 @@ public class RecepcionistaAsignacionMembresiasViewController {
     private Button btnBuscar;
 
     @FXML
-    private ComboBox<String> cmbDuracion;
+    private ComboBox<TipoMembresia> cmbDuracion;
 
     @FXML
     private ComboBox<String> cmbTipoMembresia;
@@ -57,8 +59,8 @@ public class RecepcionistaAsignacionMembresiasViewController {
     void initialize() {
         cmbTipoMembresia.getItems().addAll("Basica", "Premium", "VIP");
         cmbTipoMembresia.setValue("Seleccionar");
-        cmbDuracion.getItems().addAll("Mensual", "Trimestral", "Anual");
-        cmbDuracion.setValue("Seleccionar");
+        cmbDuracion.getItems().addAll(TipoMembresia.MENSUAL, TipoMembresia.TRIMESTRAL, TipoMembresia.ANUAL);
+        cmbDuracion.setValue(TipoMembresia.MENSUAL);
 
     }
 
