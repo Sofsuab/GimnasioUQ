@@ -10,6 +10,7 @@ public abstract class Empleado {
         this.identificacion = identificacion;
         this.telefono = telefono;
     }
+    public Empleado() {}
 
     public String getNombre() {
         return nombre;
