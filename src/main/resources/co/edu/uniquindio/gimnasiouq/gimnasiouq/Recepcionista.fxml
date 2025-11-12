@@ -18,5 +18,8 @@
             <fx:include source="RecepcionistaReportes.fxml" />
         </Tab>
 
+        <Tab text="Reserva de clases">
+            <fx:include source="RecepcionistaReservadeClases.fxml" />
+        </Tab>
     </tabs>
 </TabPane>

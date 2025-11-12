@@ -14,6 +14,8 @@ public class RecepcionistaViewController {
     private RecepcionistaAsignacionMembresiasViewController asignacionMembresiasController;
     @FXML
     private RecepcionistaReportesViewController reportesController;
+    @FXML
+    private RecepcionistaReservadeClasesViewController reservadeClasesController;
 
 
     @FXML
