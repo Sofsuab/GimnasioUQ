@@ -11,7 +11,7 @@ public class AdministradorViewController {
     @FXML
     private AdministradorGestionEntrenadoresViewController gestionEntrenadoresController;
     @FXML
-    private AdministradorGeneradordeRegistroAvanzado generadorRegistroAvanzadoController ;
+    private AdministradorGeneradordeRegistroAvanzadoViewController generadorRegistroAvanzadoController ;
 
 
     @FXML

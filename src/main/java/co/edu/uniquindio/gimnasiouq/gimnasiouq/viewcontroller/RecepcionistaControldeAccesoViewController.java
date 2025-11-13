@@ -1,4 +1,4 @@
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller;
 
-public class RecepcionistaControldeAcceso {
+public class RecepcionistaControldeAccesoViewController {
 }
