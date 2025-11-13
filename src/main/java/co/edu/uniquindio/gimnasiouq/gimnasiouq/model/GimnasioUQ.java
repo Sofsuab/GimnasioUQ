@@ -17,11 +17,9 @@ public class GimnasioUQ {
     private ArrayList<Externo> listaExternos;
     private ArrayList<Clase> listaClases;
     private ArrayList<ReservaClase> listaReservasClases;
-    private ArrayList<Administrador> listaAdministradores;
-    private Administrador administradorLogueado;
+    private Administrador Administrador;
     private ArrayList<Entrenador> listaEntrenadores;
-    private ArrayList<Recepcionista> listaRecepcionistas;
-    private Recepcionista recepcionistaLogueada;
+    private Recepcionista Recepcionista;
 
     public GimnasioUQ() {}
 
@@ -31,16 +29,16 @@ public class GimnasioUQ {
     public ArrayList<MembresiaBasica> getListaMembresiaBasica() {return listaMembresiaBasica;}
     public ArrayList<MembresiaPremium> getListaMembresiaPremium() {return listaMembresiaPremium;}
     public ArrayList<MembresiaVip> getListaMembresiaVip() {return listaMembresiaVip;}
-    public Administrador getAdministradorLogueado() {return administradorLogueado;}
-    public Recepcionista getRecepcionistaLogueada() {return recepcionistaLogueada;}
     public ArrayList<Estudiante> getListaEstudiantes() {return listaEstudiantes;}
     public ArrayList<Trabajador> getListaTrabajadores() {return listaTrabajadores;}
     public ArrayList<Externo> getListaExternos() {return listaExternos;}
     public ArrayList<Clase> getListaClases() {return listaClases;}
     public ArrayList<ReservaClase> getListaReservasClases() {return listaReservasClases;}
-    public ArrayList<Administrador> getListaAdministradores() {return listaAdministradores;}
     public ArrayList<Entrenador> getListaEntrenadores() {return listaEntrenadores;}
-    public ArrayList<Recepcionista> getListaRecepcionistas() {return listaRecepcionistas;}
+    public Administrador getAdministrador() {return Administrador;}
+    public void setAdministrador(Administrador administrador) {Administrador = administrador;}
+    public Recepcionista getRecepcionista() {return Recepcionista;}
+    public void setRecepcionista(Recepcionista recepcionista) {Recepcionista = recepcionista;}
 
 
     public static GimnasioUQ getInstance() {
@@ -49,28 +47,10 @@ public class GimnasioUQ {
         }
         return instance;
     }
+    public static void setInstance(GimnasioUQ instance) {GimnasioUQ.instance = instance;}
 
-    public Recepcionista recepcionistaLogin(int identificacion, String password){
-        Recepcionista recepcionistaSeleccionada= new Recepcionista();
-        for (Recepcionista recepcionista : listaRecepcionistas) {
-            if (recepcionista.getIdentificacion()==identificacion && recepcionista.getPassword().equals(password)) {
-                recepcionistaSeleccionada = recepcionista;
-                break;
-            }
-        }
-        return recepcionistaSeleccionada;
-    }
 
-    public Administrador administradorLogin(int identificacion, String password){
-        Administrador administradorSeleccionado= new Administrador();
-        for (Administrador administrador : listaAdministradores) {
-            if (administrador.getIdentificacion()==identificacion && administrador.getPassword().equals(password)) {
-                administradorSeleccionado = administrador;
-                break;
-            }
-        }
-        return administradorSeleccionado;
-    }
+
 
 
     public void registrarUsuario(Estudiante estudiante) {
@@ -117,8 +97,6 @@ public class GimnasioUQ {
             membresiaAplicada.setFechaFin(fechaFinal);
             externo.setMembresia(membresiaAplicada);
         }
-
-        System.out.println("Membresía asignada correctamente a: " + usuario.getNombre());
     }
 
 }

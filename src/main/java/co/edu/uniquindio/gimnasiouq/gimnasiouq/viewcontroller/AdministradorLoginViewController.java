@@ -40,8 +40,6 @@ public class AdministradorLoginViewController {
     @FXML
     private TextField txtUsuario;
 
-    @FXML
-    private TextArea txtArea;
 
 
 
@@ -70,7 +68,7 @@ public class AdministradorLoginViewController {
             } else if (rol.equals("Recepcionista") && usuario.equals("recep") && contrasenia.equals("4321")) {
                 cambiarVentana(event, "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Recepcionista.fxml");
             } else {
-                txtArea.setText( "Credenciales incorrectas o rol inválido.");
+                mostrarMensaje("Error","Credenciales incorrectas","Por favor, verifique su usuario, contraseña y rol.", Alert.AlertType.ERROR);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,6 +81,13 @@ public class AdministradorLoginViewController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+    }
+    private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
+        Alert aler = new Alert(alertType);
+        aler.setTitle(titulo);
+        aler.setHeaderText(header);
+        aler.setContentText(contenido);
+        aler.showAndWait();
     }
 
 }

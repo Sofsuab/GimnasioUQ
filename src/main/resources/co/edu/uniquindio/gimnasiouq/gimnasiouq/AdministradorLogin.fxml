@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="381.0" prefWidth="718.0" style="-fx-background-color: #FFFFFF; -fx-border-color: 000000;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller.AdministradorLoginViewController">
+<AnchorPane prefHeight="381.0" prefWidth="718.0" style="-fx-background-color: #FFFFFF; -fx-border-color: 000000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller.AdministradorLoginViewController">
    <children>
       <Label fx:id="lblBienvenida" layoutX="238.0" layoutY="14.0" prefHeight="58.0" prefWidth="282.0" text="Bienvenido al gimnasioUQ">
          <font>
@@ -48,7 +40,6 @@
             <Font name="System Italic" size="21.0" />
          </font>
       </Label>
-      <TextArea fx:id="txtArea" layoutX="35.0" layoutY="288.0" prefHeight="38.0" prefWidth="671.0" />
    </children>
    <effect>
       <InnerShadow />
