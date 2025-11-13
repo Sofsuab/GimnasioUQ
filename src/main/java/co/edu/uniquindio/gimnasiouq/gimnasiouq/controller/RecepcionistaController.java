@@ -1,6 +1,14 @@
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.controller;
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.factory.*;
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.Usuario;
 
-public class RecepcionistaController {//Aquí va a ir el controlador del recepcionista, no es necesario
-                                        //Crear varios controladores porque el recepcionista contiene
-                                        // A los demás fxml
+public class RecepcionistaController {
+    ModelFactory modelFactory;
+    public RecepcionistaController() {
+        modelFactory = ModelFactory.getInstance();
+    }
+
+    public Usuario buscarUsuarioPorIdentificacion(String identificacion) {
+        return modelFactory.buscarUsuarioPorIdentificacion(identificacion);
+    }
 }

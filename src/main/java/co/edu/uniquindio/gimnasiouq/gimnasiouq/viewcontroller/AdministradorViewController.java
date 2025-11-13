@@ -5,6 +5,7 @@ import javafx.scene.control.TabPane;
 
 public class AdministradorViewController {
 
+
     @FXML
     private TabPane tabPanePrincipal;
     //Aquí vamos a controlar las subvistas

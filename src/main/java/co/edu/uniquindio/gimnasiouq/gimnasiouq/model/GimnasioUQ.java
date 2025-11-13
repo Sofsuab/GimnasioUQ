@@ -9,6 +9,7 @@ public class GimnasioUQ {
 
 
     private String nombre;
+    private ArrayList<Usuario> listaUsuarios;
     private ArrayList<MembresiaBasica> listaMembresiaBasica;
     private ArrayList<MembresiaPremium> listaMembresiaPremium;
     private ArrayList<MembresiaVip> listaMembresiaVip;
@@ -111,6 +112,33 @@ public class GimnasioUQ {
 
     }
 
+    public Usuario encontrarPorId(String id) {
+        for (Estudiante estudiante : listaEstudiantes) {
+            if (estudiante.getIdentificacion().equals(id)) {
+                return estudiante;
+            }
+        }
+        for (Trabajador trabajador : listaTrabajadores) {
+            if (trabajador.getIdentificacion().equals(id)) {
+                return trabajador;
+            }
+        }
+        for (Externo externo : listaExternos) {
+            if (externo.getIdentificacion().equals(id)) {
+                return externo;
+            }
+        }
+        return null; // Usuario no encontrado
+    }
+
+    public Usuario buscarUsuarioPorIdentificacion(String identificacion) {
+        for (Usuario u: listaUsuarios){
+            if (u.getIdentificacion().equals(identificacion)){
+                return u;
+            }
+        }
+        return null;
+    }
 }
 
 

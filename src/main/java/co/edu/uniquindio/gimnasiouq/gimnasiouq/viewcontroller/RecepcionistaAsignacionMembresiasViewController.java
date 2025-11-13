@@ -11,7 +11,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.*;
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.controller.RecepcionistaController;
 public class RecepcionistaAsignacionMembresiasViewController {
+    RecepcionistaController recepcionistaController;
+    @FXML
+    private Label lblUsuarioEncontrado;
+
     @FXML
     private ResourceBundle resources;
 
@@ -55,7 +60,17 @@ public class RecepcionistaAsignacionMembresiasViewController {
 
     @FXML
     void OnActionBuscar(ActionEvent event) {
+        buscarUsuario();
+    }
 
+    private void buscarUsuario() {
+        String identificacion = txtId.getText();
+        Usuario usuario = recepcionistaController.buscarUsuarioPorIdentificacion(identificacion);
+        if (usuario != null) {
+            lblUsuarioEncontrado.setText(usuario.getNombre());
+        } else {
+            lblUsuarioEncontrado.setText("Usuario no encontrado");
+        }
     }
 
     @FXML
@@ -64,6 +79,7 @@ public class RecepcionistaAsignacionMembresiasViewController {
         cmbTipoMembresia.setValue("Seleccionar");
         cmbDuracion.getItems().addAll(TipoMembresia.MENSUAL, TipoMembresia.TRIMESTRAL, TipoMembresia.ANUAL);
         cmbDuracion.setValue(TipoMembresia.MENSUAL);
+        RecepcionistaController recepcionistaController = new RecepcionistaController();
 
     }
 
