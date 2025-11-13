@@ -66,7 +66,8 @@ public class AdministradorLoginViewController {
             if (rol.equals("Administrador") && usuario.equals("admin") && contrasenia.equals("1234")) {
                 cambiarVentana(event, "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Administrador.fxml");
             } else if (rol.equals("Recepcionista") && usuario.equals("recep") && contrasenia.equals("4321")) {
-                cambiarVentana(event, "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Recepcionista.fxml");
+           ;  cambiarVentana(event, "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Recepcionista.fxml");
+
             } else {
                 mostrarMensaje("Error","Credenciales incorrectas","Por favor, verifique su usuario, contraseña y rol.", Alert.AlertType.ERROR);
             }
@@ -88,6 +89,7 @@ public class AdministradorLoginViewController {
         aler.setHeaderText(header);
         aler.setContentText(contenido);
         aler.showAndWait();
+
     }
 
 }

@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-
+import javafx.scene.control.TextField;
 public class RecepcionistaAsignacionMembresiasViewController {
 
     @FXML
@@ -44,6 +44,9 @@ public class RecepcionistaAsignacionMembresiasViewController {
 
     @FXML
     private Label txtTipoMembresia;
+
+    @FXML
+    private TextField txtId;
 
     @FXML
     void OnActionAsignarMembresia(ActionEvent event) {

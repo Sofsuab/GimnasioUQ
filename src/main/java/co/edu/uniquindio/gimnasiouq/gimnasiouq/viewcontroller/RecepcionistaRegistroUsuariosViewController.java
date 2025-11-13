@@ -2,6 +2,8 @@ package co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -17,6 +19,12 @@ public class RecepcionistaRegistroUsuariosViewController {
 
     @FXML
     private Button btnAgregarUsuario;
+
+    @FXML
+    private Button btnEliminar;
+
+    @FXML
+    private Button btnActualizar;
 
     @FXML
     private ComboBox<String> cmbTipoUsuario;
@@ -38,6 +46,22 @@ public class RecepcionistaRegistroUsuariosViewController {
 
     @FXML
     private Label txtTelefono;
+
+    @FXML
+    void OnActionAgregarUsuario(ActionEvent event) {
+
+    }
+
+    @FXML
+    void OnActionEliminar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void OnActionActualizar(ActionEvent event) {
+
+    }
+
 
     @FXML
     void initialize() {
