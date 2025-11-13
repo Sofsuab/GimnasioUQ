@@ -10,8 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.*;
 public class RecepcionistaAsignacionMembresiasViewController {
-
     @FXML
     private ResourceBundle resources;
 
@@ -66,5 +66,8 @@ public class RecepcionistaAsignacionMembresiasViewController {
         cmbDuracion.setValue(TipoMembresia.MENSUAL);
 
     }
+
+    String identificacionUsuario = txtId.getText();
+
 
 }

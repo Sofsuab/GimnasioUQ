@@ -63,9 +63,17 @@ public class GimnasioUQ {
         listaExternos.add(externo);
     }
 
-    public void asignarMembresia(Usuario usuario, TipoMembresia duracion, Membresia membresia) {
+    public String asignarMembresia(Usuario usuario, TipoMembresia duracion, Membresia membresia) {
         LocalDate fechaActual = LocalDate.now();
         LocalDate fechaFinal = fechaActual.plusDays(1);
+        String nombreMembresia = "";
+        if (membresia instanceof MembresiaPremium) {
+            nombreMembresia = "Membresía Premium";
+        } else if (membresia instanceof MembresiaVip) {
+            nombreMembresia = "Membresía VIP";
+        } else if (membresia instanceof MembresiaBasica) {
+            nombreMembresia = "Membresía Básica";
+        }
 
         switch (duracion) {
             case ANUAL -> fechaFinal = fechaActual.plusYears(1);
@@ -73,7 +81,7 @@ public class GimnasioUQ {
             case TRIMESTRAL -> fechaFinal = fechaActual.plusMonths(3);
         }
 
-        // Crear copia de la membresía o usar la misma instancia
+
         Membresia membresiaAplicada = membresia;
         membresiaAplicada.setFechaInicio(fechaActual);
 
@@ -96,7 +104,11 @@ public class GimnasioUQ {
         } else if (usuario instanceof Externo externo) {
             membresiaAplicada.setFechaFin(fechaFinal);
             externo.setMembresia(membresiaAplicada);
+        } else {
+            return "Tipo de usuario no válido para asignar membresía.";
         }
+        return "A "+usuario.getNombre()+" se le ha asignado la membresía "+ nombreMembresia+" con duración "+duracion+". \nFecha de inicio: "+membresiaAplicada.getFechaInicio()+" \nFecha de fin: "+membresiaAplicada.getFechaFin()+" \nCosto: $"+membresiaAplicada.getCosto()+"\nLas funciones que tiene esta membresia son: \n"+membresiaAplicada.mostrarAcceso();
+
     }
 
 }
