@@ -6,23 +6,11 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.TipoMembresia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.*;
 import co.edu.uniquindio.gimnasiouq.gimnasiouq.controller.RecepcionistaController;
 public class RecepcionistaAsignacionMembresiasViewController {
     RecepcionistaController recepcionistaController;
-    @FXML
-    private Label lblUsuarioEncontrado;
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
     @FXML
     private Label Lupa;
 
@@ -33,10 +21,34 @@ public class RecepcionistaAsignacionMembresiasViewController {
     private Button btnBuscar;
 
     @FXML
-    private ComboBox<TipoMembresia> cmbDuracion;
+    private ComboBox<?> cmbDuracion;
 
     @FXML
-    private ComboBox<String> cmbTipoMembresia;
+    private ComboBox<?> cmbTipoMembresia;
+
+    @FXML
+    private TableView<?> tableMembresia;
+
+    @FXML
+    private TableColumn<?, ?> tcDuracion;
+
+    @FXML
+    private TableColumn<?, ?> tcEstado;
+
+    @FXML
+    private TableColumn<?, ?> tcFechaFinal;
+
+    @FXML
+    private TableColumn<?, ?> tcFechaInicio;
+
+    @FXML
+    private TableColumn<?, ?> tcId;
+
+    @FXML
+    private TableColumn<?, ?> tcMembresia;
+
+    @FXML
+    private TableColumn<?, ?> tcNombre;
 
     @FXML
     private Label txtAsignacionMembresia;
@@ -45,13 +57,13 @@ public class RecepcionistaAsignacionMembresiasViewController {
     private Label txtDuracion;
 
     @FXML
+    private TextField txtId;
+
+    @FXML
     private Label txtIdM;
 
     @FXML
     private Label txtTipoMembresia;
-
-    @FXML
-    private TextField txtId;
 
     @FXML
     void OnActionAsignarMembresia(ActionEvent event) {
