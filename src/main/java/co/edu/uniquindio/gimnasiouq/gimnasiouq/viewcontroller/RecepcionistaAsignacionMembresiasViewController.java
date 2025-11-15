@@ -6,7 +6,10 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.TipoMembresia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.*;
 import co.edu.uniquindio.gimnasiouq.gimnasiouq.controller.RecepcionistaController;
 public class RecepcionistaAsignacionMembresiasViewController {
@@ -52,10 +55,8 @@ public class RecepcionistaAsignacionMembresiasViewController {
 
     @FXML
     void OnActionAsignarMembresia(ActionEvent event) {
-        //asignarMembresia();
+
     }
-
-
 
     @FXML
     void OnActionBuscar(ActionEvent event) {
@@ -68,7 +69,7 @@ public class RecepcionistaAsignacionMembresiasViewController {
         if (usuario != null) {
             lblUsuarioEncontrado.setText(usuario.getNombre());
         } else {
-            mostrarMensaje("Error", "Usuario no encontrado", "No se encontró ningún usuario con la identificación proporcionada.", Alert.AlertType.ERROR);
+            lblUsuarioEncontrado.setText("Usuario no encontrado");
         }
     }
 
@@ -82,30 +83,7 @@ public class RecepcionistaAsignacionMembresiasViewController {
 
     }
 
+    String identificacionUsuario = txtId.getText();
 
-    /*private void asignarMembresia() {
-        String identificacion = txtId.getText();
-        Usuario usuario = recepcionistaController.buscarUsuarioPorIdentificacion(identificacion);
-        String tipoMembresiaStr = cmbTipoMembresia.getValue();
-        TipoMembresia duracion = cmbDuracion.getValue();
-        Membresia membresia = null;
 
-        String resultado = recepcionistaController.asignarMembresia(usuario, duracion, membresia);
-        if (resultado != null) {
-            lblUsuarioEncontrado.setText(resultado);
-            mostrarMensaje("Asignación Exitosa", "Membresía Asignada", resultado, Alert.AlertType.INFORMATION);
-        } else {
-            mostrarMensaje("Error", "Asignación Fallida", "No se pudo asignar la membresía. Verifique los datos ingresados.", Alert.AlertType.ERROR);
-        }
-
-    }*/
-
-    private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
-        Alert aler = new Alert(alertType);
-        aler.setTitle(titulo);
-        aler.setHeaderText(header);
-        aler.setContentText(contenido);
-        aler.showAndWait();
-
-    }
 }

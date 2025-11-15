@@ -25,4 +25,8 @@ public class ModelFactory {
     public Usuario buscarUsuarioPorIdentificacion(String identificacion) {
         return getGimnasioUQ().buscarUsuarioPorIdentificacion(identificacion);
     }
+
+    public Usuario agregarUsuario(String nombre, String apellido, String correo, String edad, String id, String telefono) {
+        return getGimnasioUQ().agregarUsuario(nombre, apellido, correo, edad, id, telefono );
+    }
 }

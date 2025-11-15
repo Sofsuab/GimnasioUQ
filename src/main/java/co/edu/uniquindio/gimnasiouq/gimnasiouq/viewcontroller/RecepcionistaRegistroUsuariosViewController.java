@@ -3,14 +3,15 @@ package co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.controller.RecepcionistaController;
 public class RecepcionistaRegistroUsuariosViewController {
-
+    RecepcionistaController recepcionistaController;
     @FXML
     private ResourceBundle resources;
 
@@ -49,7 +50,31 @@ public class RecepcionistaRegistroUsuariosViewController {
 
     @FXML
     void OnActionAgregarUsuario(ActionEvent event) {
+        agregarUsuario();
 
+    }
+
+    private void agregarUsuario() {
+        String nombre=txtNombre.getText();
+        String apellido=txtApellido.getText();
+        String correo=txtCorreo.getText();
+        String edad=txtEdad.getText();
+        String id=cmbTipoUsuario.getValue();
+        String telefono=txtTelefono.getText();
+
+        if(txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtCorreo.getText().isEmpty()
+        || txtEdad.getText().isEmpty() || txtId.getText().isEmpty()
+        || txtTelefono.getText().isEmpty()) {
+            mostrarMensaje("Llene los campos requeridos");
+        } else { Usuario usuario= recepcionistaController.agregarUsuario(nombre,apellido,correo,edad,id,telefono);
+
+        }
+        {
+
+        }
+    }
+
+    private void mostrarMensaje(String lleneLosCamposRequeridos) {
     }
 
     @FXML
@@ -67,6 +92,7 @@ public class RecepcionistaRegistroUsuariosViewController {
     void initialize() {
         cmbTipoUsuario.getItems().addAll("Estudiante", "Trabajador", "Externo");
         cmbTipoUsuario.setValue("Seleccionar");
+        RecepcionistaController recepcionistaController = new RecepcionistaController();
 
     }
 

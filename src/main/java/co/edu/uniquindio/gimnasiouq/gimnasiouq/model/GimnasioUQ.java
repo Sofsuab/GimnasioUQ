@@ -163,6 +163,11 @@ public class GimnasioUQ {
         }
         return null;
     }
+
+    public Usuario agregarUsuario(String nombre, String apellido, String correo, String edad, String id, String telefono) {
+        Usuario usuario=new Usuario (nombre, apellido, correo, edad, id, telefono);
+        listaUsuarios.add(usuario);
+    }
 }
 
 

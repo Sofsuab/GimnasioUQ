@@ -11,4 +11,8 @@ public class RecepcionistaController {
     public Usuario buscarUsuarioPorIdentificacion(String identificacion) {
         return modelFactory.buscarUsuarioPorIdentificacion(identificacion);
     }
+
+    public Usuario agregarUsuario(String nombre, String apellido, String correo, String edad, String id, String telefono) {
+        return modelFactory.agregarUsuario(nombre,apellido, correo, edad, id, telefono);
+    }
 }

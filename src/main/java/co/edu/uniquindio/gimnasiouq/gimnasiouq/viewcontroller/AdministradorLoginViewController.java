@@ -69,7 +69,8 @@ public class AdministradorLoginViewController {
            ;  cambiarVentana(event, "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Recepcionista.fxml");
 
             } else {
-                mostrarMensaje("Error","Credenciales incorrectas","Por favor, verifique su usuario, contraseña y rol.", Alert.AlertType.ERROR);
+                mostrarMensaje("Error","Credenciales incorrectas",
+                        "Por favor, verifique su usuario, contraseña y rol.", Alert.AlertType.ERROR);
             }
         } catch (IOException e) {
             e.printStackTrace();
