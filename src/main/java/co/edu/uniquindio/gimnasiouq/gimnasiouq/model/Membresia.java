@@ -33,9 +33,8 @@ public abstract class Membresia implements IMembresia{
     public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
     }
-    public boolean isEstado() {
-        return estado;
-    }
+    public boolean getEstado() {return estado;}
+    public void setEstado(boolean estado) {this.estado = estado;}
 
     public Membresia(TipoMembresia tipoMembresia, double costo, LocalDate fechaInicio, LocalDate fechaFin, boolean estado) {
         this.tipoMembresia = tipoMembresia;

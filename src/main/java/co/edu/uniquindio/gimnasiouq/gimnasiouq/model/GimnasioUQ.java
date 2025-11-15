@@ -1,3 +1,4 @@
+
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.model;
 
 import java.time.LocalDate;
@@ -10,9 +11,10 @@ public class GimnasioUQ {
 
     private String nombre;
     private ArrayList<Usuario> listaUsuarios;
-    private ArrayList<MembresiaBasica> listaMembresiaBasica;
-    private ArrayList<MembresiaPremium> listaMembresiaPremium;
-    private ArrayList<MembresiaVip> listaMembresiaVip;
+    private ArrayList<Membresia> listaMembresias;
+    private MembresiaBasica membresiaBasica;
+    private MembresiaVip membresiaVip;
+    private MembresiaPremium membresiaPremium;
     private ArrayList<Estudiante> listaEstudiantes;
     private ArrayList<Trabajador> listaTrabajadores;
     private ArrayList<Externo> listaExternos;
@@ -22,14 +24,36 @@ public class GimnasioUQ {
     private ArrayList<Entrenador> listaEntrenadores;
     private Recepcionista Recepcionista;
 
-    public GimnasioUQ() {}
+    public GimnasioUQ() {
+        this.nombre = "Gimnasio UQ";
+        this.listaUsuarios = new ArrayList<>();
+        this.listaMembresias = new ArrayList<>();
+        this.membresiaBasica = new MembresiaBasica(null, 50000, null, null, true);
+        this.membresiaPremium = new MembresiaPremium(null, 80000, null, null, true);
+        this.membresiaVip = new MembresiaVip(null, 120000, null, null, true);
+        this.listaMembresias = new ArrayList<>();
+        this.listaEstudiantes = new ArrayList<>();
+        this.listaTrabajadores = new ArrayList<>();
+        this.listaExternos = new ArrayList<>();
+        this.listaClases = new ArrayList<>();
+        this.listaReservasClases = new ArrayList<>();
+        this.listaEntrenadores = new ArrayList<>();
+    }
+
 
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}
 
-    public ArrayList<MembresiaBasica> getListaMembresiaBasica() {return listaMembresiaBasica;}
-    public ArrayList<MembresiaPremium> getListaMembresiaPremium() {return listaMembresiaPremium;}
-    public ArrayList<MembresiaVip> getListaMembresiaVip() {return listaMembresiaVip;}
+    public MembresiaBasica getMembresiaBasica() {return membresiaBasica;}
+    public void setMembresiaBasica(MembresiaBasica membresiaBasica) {this.membresiaBasica = membresiaBasica;}
+    public MembresiaVip getMembresiaVip() {return membresiaVip;}
+    public void setMembresiaVip(MembresiaVip membresiaVip) {this.membresiaVip = membresiaVip;}
+    public MembresiaPremium getMembresiaPremium() {return membresiaPremium;}
+    public void setMembresiaPremium(MembresiaPremium membresiaPremium) {this.membresiaPremium = membresiaPremium;}
+
+    public ArrayList<Membresia> getListaMembresias() {return listaMembresias;}
+
+    public ArrayList<Usuario> getListaUsuarios() {return listaUsuarios;}
     public ArrayList<Estudiante> getListaEstudiantes() {return listaEstudiantes;}
     public ArrayList<Trabajador> getListaTrabajadores() {return listaTrabajadores;}
     public ArrayList<Externo> getListaExternos() {return listaExternos;}
