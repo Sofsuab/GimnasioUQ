@@ -3,10 +3,13 @@
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.viewcontroller;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.controller.AdministradorLoginController;
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.factory.ModelFactory;
+import co.edu.uniquindio.gimnasiouq.gimnasiouq.model.GimnasioUQ;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class AdministradorLoginViewController {
+    private AdministradorLoginController adminController;
 
     @FXML
     private ResourceBundle resources;
@@ -26,7 +30,8 @@ public class AdministradorLoginViewController {
     @FXML
     private Button btnIngresar;
 
-
+    @FXML
+    private Label lblMensaje;
 
     @FXML
     private ComboBox<String> cmbRol;
@@ -47,41 +52,48 @@ public class AdministradorLoginViewController {
     void initialize() {
         cmbRol.getItems().addAll("Administrador", "Recepcionista");
         cmbRol.setValue("Seleccionar");
+        adminController = new AdministradorLoginController();
 
     }
 
+
     @FXML
-    void OnActionOnLogin(ActionEvent event)  {
+    void OnActionOnLogin(ActionEvent event) throws IOException {
+
         String usuario = txtUsuario.getText();
         String contrasenia = txtContrasenia.getText();
         String rol = cmbRol.getValue();
 
 
-        if (rol == null) {
-            System.out.println("Seleccione un rol.");
+        boolean acceso = ModelFactory.getInstance().autenticar(usuario, contrasenia, rol);
+
+        if(acceso){
+            lblMensaje.setText("Acceso permitido");
+            cambiarVentanaSegunRol(rol);
+        }else{
+            lblMensaje.setText("usuario o contraseña incorrecta");
+        }
+    }
+
+    private void cambiarVentanaSegunRol(String rol) throws IOException {
+        Stage stage = (Stage) txtUsuario.getScene().getWindow();
+        Parent root = null;
+        String ruta = null;
+
+        if ("Administrador".equals(rol)) {
+            ruta = "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Administrador.fxml";
+        } else if ("Recepcionista".equals(rol)) {
+            ruta = "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Recepcionista.fxml";
+        } else {
+            lblMensaje.setText("Rol no reconocido");
             return;
         }
 
-        try {
-            if (rol.equals("Administrador") && usuario.equals("admin") && contrasenia.equals("1234")) {
-                cambiarVentana(event, "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Administrador.fxml");
-            } else if (rol.equals("Recepcionista") && usuario.equals("recep") && contrasenia.equals("4321")) {
-           ;  cambiarVentana(event, "/co/edu/uniquindio/gimnasiouq/gimnasiouq/Recepcionista.fxml");
+        System.out.println("Buscando FXML en: " + ruta + getClass().getResource(ruta));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(ruta)));
 
-            } else {
-                mostrarMensaje("Error","Credenciales incorrectas",
-                        "Por favor, verifique su usuario, contraseña y rol.", Alert.AlertType.ERROR);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    private void cambiarVentana(ActionEvent event, String fxmlRuta) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlRuta));
-        Parent root = loader.load();
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
         stage.show();
     }
     private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {

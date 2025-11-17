@@ -72,30 +72,30 @@ public class RecepcionistaAsignacionMembresiasViewController {
 
     @FXML
     void OnActionBuscar(ActionEvent event) {
-        buscarUsuario();
+       // buscarUsuario();
     }
 
-    private void buscarUsuario() {
-        String identificacion = txtId.getText();
-        Usuario usuario = recepcionistaController.buscarUsuarioPorIdentificacion(identificacion);
-        if (usuario != null) {
-            lblUsuarioEncontrado.setText(usuario.getNombre());
-        } else {
-            lblUsuarioEncontrado.setText("Usuario no encontrado");
-        }
-    }
+   // private void buscarUsuario() {
+    //    String identificacion = txtId.getText();
+      //  Usuario usuario = recepcionistaController.buscarUsuarioPorIdentificacion(identificacion);
+       // if (usuario != null) {
+       //     lblUsuarioEncontrado.setText(usuario.getNombre());
+     //   } else {
+       //     lblUsuarioEncontrado.setText("Usuario no encontrado");
+      //  }
+    //}
 
     @FXML
     void initialize() {
-        cmbTipoMembresia.getItems().addAll("Basica", "Premium", "VIP");
-        cmbTipoMembresia.setValue("Seleccionar");
-        cmbDuracion.getItems().addAll(TipoMembresia.MENSUAL, TipoMembresia.TRIMESTRAL, TipoMembresia.ANUAL);
-        cmbDuracion.setValue(TipoMembresia.MENSUAL);
-        RecepcionistaController recepcionistaController = new RecepcionistaController();
+     //   cmbTipoMembresia.getItems().addAll("Basica", "Premium", "VIP");
+      //  cmbTipoMembresia.setValue("Seleccionar");
+       // cmbDuracion.getItems().addAll(TipoMembresia.MENSUAL, TipoMembresia.TRIMESTRAL, TipoMembresia.ANUAL);
+       // cmbDuracion.setValue(TipoMembresia.MENSUAL);
+       //RecepcionistaController recepcionistaController = new RecepcionistaController();
 
     }
 
-    String identificacionUsuario = txtId.getText();
+   // String identificacionUsuario = txtId.getText();
 
 
 }

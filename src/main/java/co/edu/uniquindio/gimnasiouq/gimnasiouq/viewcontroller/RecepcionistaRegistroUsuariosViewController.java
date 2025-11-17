@@ -50,29 +50,11 @@ public class RecepcionistaRegistroUsuariosViewController {
 
     @FXML
     void OnActionAgregarUsuario(ActionEvent event) {
-        agregarUsuario();
+
 
     }
 
-    private void agregarUsuario() {
-        String nombre=txtNombre.getText();
-        String apellido=txtApellido.getText();
-        String correo=txtCorreo.getText();
-        String edad=txtEdad.getText();
-        String id=cmbTipoUsuario.getValue();
-        String telefono=txtTelefono.getText();
 
-        if(txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtCorreo.getText().isEmpty()
-        || txtEdad.getText().isEmpty() || txtId.getText().isEmpty()
-        || txtTelefono.getText().isEmpty()) {
-            mostrarMensaje("Llene los campos requeridos");
-        } else { Usuario usuario= recepcionistaController.agregarUsuario(nombre,apellido,correo,edad,id,telefono);
-
-        }
-        {
-
-        }
-    }
 
     private void mostrarMensaje(String lleneLosCamposRequeridos) {
     }
