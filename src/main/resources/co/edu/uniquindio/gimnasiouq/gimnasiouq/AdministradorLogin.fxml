@@ -47,7 +47,6 @@
             <Font name="System Italic" size="21.0" />
          </font>
       </Label>
-      <Label fx:id="lblMensaje" layoutX="103.0" layoutY="285.0" prefHeight="18.0" prefWidth="542.0" text="Label" />
    </children>
    <effect>
       <InnerShadow />
