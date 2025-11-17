@@ -1,7 +1,5 @@
 package co.edu.uniquindio.gimnasiouq.gimnasiouq.model;
 
-import java.time.LocalDate;
-
 public class Recepcionista extends Empleado{
     private String password;
     public Recepcionista(String nombre, int identificacion, int telefono, String password) {
@@ -19,7 +17,7 @@ public class Recepcionista extends Empleado{
                 Estudiante estudiante = new Estudiante(nombre,apellido,identificacion,edad, telefono,correo);
                 GimnasioUQ.getInstance().registrarUsuario(estudiante);
             case "Trabajador" :
-                Trabajador trabajador = new Trabajador(nombre,apellido,identificacion,edad, telefono,correo);
+                TrabajadorUQ trabajador = new TrabajadorUQ(nombre,apellido,identificacion,edad, telefono,correo);
                 GimnasioUQ.getInstance().registrarUsuario(trabajador);
             case "Externo":
                 Externo externo = new Externo(nombre,apellido,identificacion,edad, telefono,correo);
